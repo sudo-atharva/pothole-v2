@@ -110,6 +110,10 @@ This GIF showcases our application running in real-time:
     {"lat": 12.345678, "lon": 77.123456}
     ```
 - Configure `SERIAL_PORT` and `SERIAL_BAUD` at the top of `road_survey.py` to match your device (default `COM3` / `115200`).
+- Firmware for this is in `esp32_gps_survey/esp32_gps_survey.ino`:
+  - Wiring: NEO-6M `TX` -> ESP32 `GPIO16` (RX2), NEO-6M `RX` -> ESP32 `GPIO17` (TX2), `VCC`/`GND` as usual.
+  - Status LED on `GPIO13`: blinks while searching for a fix, solid once locked.
+  - Requires the `TinyGPSPlus` library (Arduino Library Manager -> "TinyGPSPlus" by Mikal Hart).
 
 ### Behavior
 - On each pothole detection, saves the frame to `survey_output/images/` and appends a row (`timestamp`, `latitude`, `longitude`, `image_path`, `damage_percent`) to `survey_output/survey_log.csv`.
