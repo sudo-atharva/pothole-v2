@@ -130,6 +130,13 @@ Press `q` to stop. To verify the GPS line parser without hardware attached:
 python road_survey.py --selftest
 ```
 
+### GUI
+Tkinter front-end for both modes: pick a webcam index or video file, tick **GPS survey** (and set the COM port) to log geotagged detections.
+On Windows, run `install.bat` once to install dependencies, then:
+```bash
+python gui_app.py
+```
+
 
 ## 🔗 Additional Resources
 
